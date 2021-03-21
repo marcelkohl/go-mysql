@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql-docker:
+    image: mysql/mysql-server:latest
+    container_name: mysql-on-docker
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: docker_db
+    ports:
+      - "8306:3306"
+    volumes:
+      - ./mysql-db-data:/var/lib/mysql
